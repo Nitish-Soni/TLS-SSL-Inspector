@@ -1,0 +1,161 @@
+body,
+html,
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.commonContainer {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commonContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.commonHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 2px;
+  padding: 2px;
+}
+
+.commonParagraph {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  margin: 2px;
+  padding: 2px;
+}
+
+.commonFormContainer {
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 2px;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.commonForm {
+  width: 95%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.formInputBox {
+  text-align: center;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  font-size: 16px;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+  color: white;
+}
+
+.formSubmitButton {
+  width: 15%;
+  background-color: yellow;
+  border: none;
+  color: black;
+  font-weight: bold;
+  height: 45px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.rotateAnnimation {
+  animation: rotation 1.5s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.anotherScanContainer {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.anotherScanButton {
+  background-color: yellow;
+  padding: 10px;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.resultProgressContainer {
+  width: 50%;
+  padding: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.scanItemList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+input:read-only {
+  cursor: default;
+}
