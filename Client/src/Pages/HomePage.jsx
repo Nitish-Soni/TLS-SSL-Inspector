@@ -9,20 +9,14 @@ import { useState } from "react";
 export default function HomePage() {
   const [inputURL, setInputURL] = useState("");
   const [loadingResult, setLoadingResult] = useState(false);
-  const [certificateScanResult, setCertificateScanResult] = useState(false);
-  const [configurationScanResult, setConfigurationScanResult] = useState(false);
   const [completeScan, setCompleteScan] = useState(false);
 
   function startScan(event) {
     event.preventDefault();
     if (loadingResult == false) {
       setLoadingResult(true);
-      setCertificateScanResult(true);
-      setConfigurationScanResult(true);
       console.log("Scan Started for URL:", inputURL);
       setTimeout(() => {
-        setCertificateScanResult(false);
-        setConfigurationScanResult(false);
         setCompleteScan(true);
       }, 2000);
     }
@@ -30,7 +24,6 @@ export default function HomePage() {
   function initiateAnotherScan() {
     setCompleteScan(false);
     setLoadingResult(false);
-    setCertificateScanResult(false);
     setInputURL("");
   }
   return (
@@ -92,44 +85,15 @@ export default function HomePage() {
           </div>
         ) : null}
         {loadingResult ? (
-          <div className="resultProgressContainer">
-            <div className="scanItemList">
-              Cerificate Scan{" "}
-              {certificateScanResult ? (
-                <FontAwesomeIcon
-                  icon={faSpinner}
-                  size="1x"
-                  className="rotateAnnimation"
-                  style={{ marginLeft: "10px" }}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCircleCheck}
-                  size="1x"
-                  style={{ marginLeft: "10px" }}
-                  color="green"
-                />
-              )}
-            </div>
-            <div className="scanItemList">
-              Configuration Scan{" "}
-              {configurationScanResult ? (
-                <FontAwesomeIcon
-                  icon={faSpinner}
-                  size="1x"
-                  className="rotateAnnimation"
-                  style={{ marginLeft: "10px" }}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={faCircleCheck}
-                  size="1x"
-                  style={{ marginLeft: "10px" }}
-                  color="green"
-                />
-              )}
-            </div>
-          </div>
+          completeScan ? null : (
+            <FontAwesomeIcon
+              icon={faSpinner}
+              size="3x"
+              className="rotateAnnimation"
+              style={{ marginLeft: "10px" }}
+              color="white"
+            />
+          )
         ) : null}
       </div>
     </div>
